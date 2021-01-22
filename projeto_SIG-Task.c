@@ -24,11 +24,11 @@ void menuSobre(void) {
     printf("///                                                                         ///\n");
     printf("///    = = = = = SIG-Task Agenda de Tarefas e Compromissos = = = = =        ///\n");
     printf("///                                                                         ///\n");
-    printf("///  Programa exemplo utilizado na disciplina DCT1106 - Programacao, para   ///\n");
-    printf("///  fins didaticos de ilustracao. O programa contem os principais modulos  ///\n");
-    printf("///  e funcionalidades que serao exigidos na avaliacao dos projetos a serem ///\n");
-    printf("///  desenvolvidos pelos alunos ao longo da disciplina. Serve como um guia  ///\n");
-    printf("///  de consulta e referencia para o desenvolvidos dos demais projetos.     ///\n");
+    printf("///  O seguinte projeto tem como objetivo desenvolver um programa de        ///\n");
+    printf("///  computador que realize o agendamento de tarefas, de forma eficiente,   ///\n");
+    printf("///  fornecendo lembretes aos usuarios sobre compromissos agendados.        ///\n");
+    printf("///                                                                         ///\n");
+    printf("///                                                                         ///\n");
     printf("///                                                                         ///\n");
     printf("///////////////////////////////////////////////////////////////////////////////\n");
     printf("\n");
