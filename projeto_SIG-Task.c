@@ -22,7 +22,7 @@ int main(void) {
 }
 
 void menuPrincipal(void) {
-    system("clear");
+    system("cls");
 	printf("\n");
 	printf("/////////////////////////////////////////////////////////////////////////////\n");
 	printf("///                                                                       ///\n");
@@ -54,9 +54,8 @@ void menuPrincipal(void) {
 	getchar();
 }
 
-
 void menuSobre(void) {
-    system("Clear");
+    system("cls");
     printf("\n");
     printf("///////////////////////////////////////////////////////////////////////////////\n");
     printf("///                                                                         ///\n");
@@ -83,9 +82,8 @@ void menuSobre(void) {
     getchar();
 }
 
-
 void menuTarefa(void) {
-    system("clear");
+    system("cls");
 	printf("\n");
 	printf("/////////////////////////////////////////////////////////////////////////////\n");
 	printf("///                                                                       ///\n");
@@ -119,7 +117,7 @@ void menuTarefa(void) {
 
 
 void menuCompromisso(void) {
-    system("clear");
+    system("cls");
 	printf("\n");
 	printf("/////////////////////////////////////////////////////////////////////////////\n");
 	printf("///                                                                       ///\n");
@@ -153,7 +151,7 @@ void menuCompromisso(void) {
 
 
 void menuEvento(void) {
-    system("clear");
+    system("cls");
 	printf("\n");
 	printf("/////////////////////////////////////////////////////////////////////////////\n");
 	printf("///                                                                       ///\n");
@@ -187,7 +185,7 @@ void menuEvento(void) {
 
 
 void telaCadastrarTarefa(void) {
-    system("clear");
+    system("cls");
 	printf("\n");
 	printf("/////////////////////////////////////////////////////////////////////////////\n");
 	printf("///                                                                       ///\n");
@@ -219,7 +217,7 @@ void telaCadastrarTarefa(void) {
 }
 
 void telaCadastrarCompromisso(void) {
-    system("clear");
+    system("cls");
 	printf("\n");
 	printf("/////////////////////////////////////////////////////////////////////////////\n");
 	printf("///                                                                       ///\n");
