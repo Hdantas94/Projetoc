@@ -7,6 +7,7 @@ void menuTarefa(void);
 void menuCompromisso(void);
 void menuEvento(void);
 void telaCadastrarTarefa(void);
+void telaCadastrarCompromisso(void);
 
 int main(void) {
     menuPrincipal();
@@ -15,6 +16,7 @@ int main(void) {
     menuCompromisso();
     menuEvento();
     telaCadastrarTarefa();
+	telaCadastrarCompromisso();
     return 0;
 
 }
@@ -174,7 +176,7 @@ void menuEvento(void) {
 	printf("///           4. Excluir um evento do sistema                             ///\n");
 	printf("///           0. Voltar ao menu anterior                                  ///\n");
 	printf("///                                                                       ///\n");
-	printf("///           Escolha a opção desejada:                                   ///\n");
+	printf("///           Escolha a opcao desejada:                                   ///\n");
 	printf("///                                                                       ///\n");
 	printf("///                                                                       ///\n");
 	printf("/////////////////////////////////////////////////////////////////////////////\n");
@@ -207,6 +209,37 @@ void telaCadastrarTarefa(void) {
 	printf("///           Responsavel:                                                ///\n");
 	printf("///           Vencimento:                                                 ///\n");
 	printf("///           Prioridade:                                                 ///\n");
+    printf("///           Informacoes complementares:                                 ///\n");
+	printf("///                                                                       ///\n");
+	printf("///                                                                       ///\n");
+	printf("/////////////////////////////////////////////////////////////////////////////\n");
+	printf("\n");
+	printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
+	getchar();
+}
+
+void telaCadastrarCompromisso(void) {
+    system("clear");
+	printf("\n");
+	printf("/////////////////////////////////////////////////////////////////////////////\n");
+	printf("///                                                                       ///\n");
+	printf("///          ===================================================          ///\n");
+	printf("///          = = = = = = = = = = = = = = = = = = = = = = = = = =          ///\n");
+	printf("///          = = = =  Agenda de Tarefas e Compromissos   = = = =          ///\n");
+	printf("///          = = = = = = = = = = = = = = = = = = = = = = = = = =          ///\n");
+	printf("///          ===================================================          ///\n");
+	printf("///                Developed by  @Hdantas94 - Jan, 2021                   ///\n");
+	printf("///                                                                       ///\n");
+	printf("/////////////////////////////////////////////////////////////////////////////\n");
+	printf("///                                                                       ///\n");
+	printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
+	printf("///           = = = = = =  Cadastrar Compromisso  = = = = = =             ///\n");
+	printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
+	printf("///                                                                       ///\n");
+	printf("///           Tipo:                                                       ///\n");
+	printf("///           Descricao:                                                  ///\n");
+	printf("///           Local:                                                      ///\n");
+	printf("///           Horario:                                                    ///\n");
     printf("///           Informacoes complementares:                                 ///\n");
 	printf("///                                                                       ///\n");
 	printf("///                                                                       ///\n");
