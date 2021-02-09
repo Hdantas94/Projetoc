@@ -2,26 +2,27 @@
 #include <stdlib.h>
 
 void menuSobre(void);
-void menuPrincipal(void);
-void menuTarefa(void);
-void menuCompromisso(void);
-void menuEvento(void);
+char menuPrincipal(void);
+char menuTarefa(void);
+char menuCompromisso(void);
 void telaCadastrarTarefa(void);
 void telaCadastrarCompromisso(void);
 
 int main(void) {
+		char opcao;
+
     menuPrincipal();
     menuSobre();
     menuTarefa();
     menuCompromisso();
-    menuEvento();
     telaCadastrarTarefa();
 	telaCadastrarCompromisso();
     return 0;
 
 }
 
-void menuPrincipal(void) {
+char menuPrincipal(void) {
+	char opcao;
     system("cls");
 	printf("\n");
 	printf("/////////////////////////////////////////////////////////////////////////////\n");
@@ -46,12 +47,14 @@ void menuPrincipal(void) {
 	printf("///           0. Encerra o programa                                       ///\n");
 	printf("///                                                                       ///\n");
 	printf("///           Escolha a opcao desejada:                                   ///\n");
+	scanf("%c", &opcao);
 	printf("///                                                                       ///\n");
 	printf("///                                                                       ///\n");
 	printf("/////////////////////////////////////////////////////////////////////////////\n");
 	printf("\n");
     printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
 	getchar();
+	return opcao;
 }
 
 void menuSobre(void) {
@@ -82,7 +85,8 @@ void menuSobre(void) {
     getchar();
 }
 
-void menuTarefa(void) {
+char menuTarefa(void) {
+		char opcao;
     system("cls");
 	printf("\n");
 	printf("/////////////////////////////////////////////////////////////////////////////\n");
@@ -107,16 +111,19 @@ void menuTarefa(void) {
 	printf("///           0. Voltar ao menu anterior                                  ///\n");
 	printf("///                                                                       ///\n");
 	printf("///           Escolha a opcao desejada:                                   ///\n");
+	scanf("%c", &opcao);
 	printf("///                                                                       ///\n");
 	printf("///                                                                       ///\n");
 	printf("/////////////////////////////////////////////////////////////////////////////\n");
 	printf("\n");
     printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
 	getchar();
+	return opcao;
 }
 
 
-void menuCompromisso(void) {
+char menuCompromisso(void) {
+	char opcao;
     system("cls");
 	printf("\n");
 	printf("/////////////////////////////////////////////////////////////////////////////\n");
@@ -141,50 +148,24 @@ void menuCompromisso(void) {
 	printf("///           0. Voltar ao menu anterior                                  ///\n");
 	printf("///                                                                       ///\n");
 	printf("///           Escolha a opcao desejada:                                   ///\n");
+	scanf("%c", &opcao);
 	printf("///                                                                       ///\n");
 	printf("///                                                                       ///\n");
 	printf("/////////////////////////////////////////////////////////////////////////////\n");
 	printf("\n");
     printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
 	getchar();
+	return opcao;
 }
-
-
-void menuEvento(void) {
-    system("cls");
-	printf("\n");
-	printf("/////////////////////////////////////////////////////////////////////////////\n");
-	printf("///                                                                       ///\n");
-	printf("///          ===================================================          ///\n");
-	printf("///          = = = = = = = = = = = = = = = = = = = = = = = = = =          ///\n");
-	printf("///          = = = =  Agenda de Tarefas e Compromissos   = = = =          ///\n");
-	printf("///          = = = = = = = = = = = = = = = = = = = = = = = = = =          ///\n");
-	printf("///          ===================================================          ///\n");
-	printf("///                Developed by  @Hdantas94 - Jan, 2021                   ///\n");
-	printf("///                                                                       ///\n");
-	printf("/////////////////////////////////////////////////////////////////////////////\n");
-	printf("///                                                                       ///\n");
-	printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
-	printf("///           = = = = = = = = =  Menu Evento  = = = = = = = =             ///\n");
-	printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
-	printf("///                                                                       ///\n");
-	printf("///           1. Cadastrar uma novo evento                                ///\n");
-	printf("///           2. Pesquisar por evento ja cadastrado                       ///\n");
-	printf("///           3. Atualizar dados de um evento                             ///\n");
-	printf("///           4. Excluir um evento do sistema                             ///\n");
-	printf("///           0. Voltar ao menu anterior                                  ///\n");
-	printf("///                                                                       ///\n");
-	printf("///           Escolha a opcao desejada:                                   ///\n");
-	printf("///                                                                       ///\n");
-	printf("///                                                                       ///\n");
-	printf("/////////////////////////////////////////////////////////////////////////////\n");
-	printf("\n");
-    printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
-	getchar();
-}
-
 
 void telaCadastrarTarefa(void) {
+	char tipo[51];
+	char desc[200];
+	char rps[51];
+	char venc[11];
+	char prior[6];
+	char infc[200];
+
     system("cls");
 	printf("\n");
 	printf("/////////////////////////////////////////////////////////////////////////////\n");
@@ -203,11 +184,23 @@ void telaCadastrarTarefa(void) {
 	printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
 	printf("///                                                                       ///\n");
 	printf("///           Tipo:                                                       ///\n");
+	scanf("%[A-ZÁÉÍÓÚÂÊÔÇÀÃÕ a-záéíóúâêôçàãõ ]", tipo);
+	getchar();
 	printf("///           Descricao:                                                  ///\n");
+	scanf("%[A-ZÁÉÍÓÚÂÊÔÇÀÃÕ a-záéíóúâêôçàãõ ]", desc); 
+	getchar();
 	printf("///           Responsavel:                                                ///\n");
+	scanf("%[A-ZÁÉÍÓÚÂÊÔÇÀÃÕ a-záéíóúâêôçàãõ]", rps);
+	getchar();
 	printf("///           Vencimento:                                                 ///\n");
+	scanf("%[0-9/]", venc);
+	getchar();
 	printf("///           Prioridade:                                                 ///\n");
+	scanf("%[A-ZÉ a-zé]", prior);
+	getchar();
     printf("///           Informacoes complementares:                                 ///\n");
+	scanf("%[A-ZÁÉÍÓÚÂÊÔÇÀÃÕ a-záéíóúâêôçàãõ]", infc);
+	getchar();
 	printf("///                                                                       ///\n");
 	printf("///                                                                       ///\n");
 	printf("/////////////////////////////////////////////////////////////////////////////\n");
@@ -217,6 +210,12 @@ void telaCadastrarTarefa(void) {
 }
 
 void telaCadastrarCompromisso(void) {
+	char tipo[51];
+	char desc[200];
+	char local[100];
+	char horar[5];
+	char infc[200];
+
     system("cls");
 	printf("\n");
 	printf("/////////////////////////////////////////////////////////////////////////////\n");
@@ -235,10 +234,20 @@ void telaCadastrarCompromisso(void) {
 	printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
 	printf("///                                                                       ///\n");
 	printf("///           Tipo:                                                       ///\n");
+	scanf("%[A-ZÁÉÍÓÚÂÊÔÇÀÃÕ a-záéíóúâêôçàãõ ]", tipo);
+	getchar();
 	printf("///           Descricao:                                                  ///\n");
+	scanf("%[A-ZÁÉÍÓÚÂÊÔÇÀÃÕ a-záéíóúâêôçàãõ ]", desc);
+	getchar();
 	printf("///           Local:                                                      ///\n");
+	scanf("%[A-ZÁÉÍÓÚÂÊÔÇÀÃÕ a-záéíóúâêôçàãõ]", local);
+	getchar();
 	printf("///           Horario:                                                    ///\n");
+	scanf("%[0-9:]", horar);
+	getchar();
     printf("///           Informacoes complementares:                                 ///\n");
+	scanf("%[A-ZÁÉÍÓÚÂÊÔÇÀÃÕ a-záéíóúâêôçàãõ ]", infc);
+	getchar();
 	printf("///                                                                       ///\n");
 	printf("///                                                                       ///\n");
 	printf("/////////////////////////////////////////////////////////////////////////////\n");
