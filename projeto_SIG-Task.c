@@ -4,25 +4,35 @@
 void menuSobre(void);
 char menuPrincipal(void);
 char menuTarefa(void);
+void moduloTarefa(void);
 char menuCompromisso(void);
+void moduloCompromisso(void);
 void telaCadastrarTarefa(void);
 void telaCadastrarCompromisso(void);
+void moduloInformacoes(void);
 
 int main(void) {
 		char opcao;
+		do {
+			opcao = menuPrincipal();
+			switch(opcao) {
+				case '1': moduloTarefa();
+								 break;
+				case '2': moduloCompromisso();
+								 break;
+				case '3': moduloInformacoes();
+								 break;
+			}
 
-    menuPrincipal();
-    menuSobre();
-    menuTarefa();
-    menuCompromisso();
-    telaCadastrarTarefa();
-	telaCadastrarCompromisso();
-    return 0;
+		} while (opcao != '0');
+	    return 0;
+
+
 
 }
 
 char menuPrincipal(void) {
-	char opcao;
+	char op;
     system("cls");
 	printf("\n");
 	printf("/////////////////////////////////////////////////////////////////////////////\n");
@@ -47,14 +57,14 @@ char menuPrincipal(void) {
 	printf("///           0. Encerra o programa                                       ///\n");
 	printf("///                                                                       ///\n");
 	printf("///           Escolha a opcao desejada:                                   ///\n");
-	scanf("%c", &opcao);
+	scanf("%c", &op);
 	printf("///                                                                       ///\n");
 	printf("///                                                                       ///\n");
 	printf("/////////////////////////////////////////////////////////////////////////////\n");
 	printf("\n");
     printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
 	getchar();
-	return opcao;
+	return op;
 }
 
 void menuSobre(void) {
@@ -86,7 +96,7 @@ void menuSobre(void) {
 }
 
 char menuTarefa(void) {
-		char opcao;
+		char op;
     system("cls");
 	printf("\n");
 	printf("/////////////////////////////////////////////////////////////////////////////\n");
@@ -111,19 +121,19 @@ char menuTarefa(void) {
 	printf("///           0. Voltar ao menu anterior                                  ///\n");
 	printf("///                                                                       ///\n");
 	printf("///           Escolha a opcao desejada:                                   ///\n");
-	scanf("%c", &opcao);
+	scanf("%c", &op);
 	printf("///                                                                       ///\n");
 	printf("///                                                                       ///\n");
 	printf("/////////////////////////////////////////////////////////////////////////////\n");
 	printf("\n");
     printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
 	getchar();
-	return opcao;
+	return op;
 }
 
 
 char menuCompromisso(void) {
-	char opcao;
+	char op;
     system("cls");
 	printf("\n");
 	printf("/////////////////////////////////////////////////////////////////////////////\n");
@@ -148,14 +158,14 @@ char menuCompromisso(void) {
 	printf("///           0. Voltar ao menu anterior                                  ///\n");
 	printf("///                                                                       ///\n");
 	printf("///           Escolha a opcao desejada:                                   ///\n");
-	scanf("%c", &opcao);
+	scanf("%c", &op);
 	printf("///                                                                       ///\n");
 	printf("///                                                                       ///\n");
 	printf("/////////////////////////////////////////////////////////////////////////////\n");
 	printf("\n");
     printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
 	getchar();
-	return opcao;
+	return op;
 }
 
 void telaCadastrarTarefa(void) {
@@ -254,4 +264,20 @@ void telaCadastrarCompromisso(void) {
 	printf("\n");
 	printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
 	getchar();
+}
+
+void moduloTarefa(void) {
+	// em desenvolvimento
+
+}
+
+void moduloCompromisso(void) {
+	// em desenvolvimento
+
+}
+
+void moduloInformacoes(void) {
+	// em desenvolvimento
+	menuSobre();
+
 }
