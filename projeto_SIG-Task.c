@@ -10,17 +10,23 @@ void moduloCompromisso(void);
 void telaCadastrarTarefa(void);
 void telaCadastrarCompromisso(void);
 void moduloInformacoes(void);
+void pesquisarTarefa(void);
+void atualizarTarefa(void);
+void excluirTarefa(void);
+void pesquisarCompromisso(void);
+void atualizarCompromisso(void);
+void excluirCompromisso(void);
 
 int main(void) {
 		char opcao;
 		do {
 			opcao = menuPrincipal();
 			switch(opcao) {
-				case '1': moduloTarefa();
+				case '1': menuTarefa();
 								 break;
-				case '2': moduloCompromisso();
+				case '2': menuCompromisso();
 								 break;
-				case '3': moduloInformacoes();
+				case '3': menuSobre();
 								 break;
 			}
 
@@ -52,7 +58,6 @@ char menuPrincipal(void) {
 	printf("///                                                                       ///\n");
 	printf("///           1. Modulo tarefa                                            ///\n");
 	printf("///           2. Modulo compromisso                                       ///\n");
-	printf("///           3. Modulo Eventos                                           ///\n");
 	printf("///           4. Informacoes sobre o sistema                              ///\n");
 	printf("///           0. Encerra o programa                                       ///\n");
 	printf("///                                                                       ///\n");
@@ -95,6 +100,7 @@ void menuSobre(void) {
     getchar();
 }
 
+
 char menuTarefa(void) {
 		char op;
     system("cls");
@@ -132,6 +138,7 @@ char menuTarefa(void) {
 }
 
 
+
 char menuCompromisso(void) {
 	char op;
     system("cls");
@@ -167,6 +174,7 @@ char menuCompromisso(void) {
 	getchar();
 	return op;
 }
+
 
 void telaCadastrarTarefa(void) {
 	char tipo[51];
@@ -266,18 +274,3 @@ void telaCadastrarCompromisso(void) {
 	getchar();
 }
 
-void moduloTarefa(void) {
-	// em desenvolvimento
-
-}
-
-void moduloCompromisso(void) {
-	// em desenvolvimento
-
-}
-
-void moduloInformacoes(void) {
-	// em desenvolvimento
-	menuSobre();
-
-}
