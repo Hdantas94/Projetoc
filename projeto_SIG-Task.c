@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
-
+#include "functions.h"
 
 char menuPrincipal(void);
 void moduloInformacoes(void);
@@ -20,6 +19,11 @@ void telaCadastrarCompromisso(void);
 void pesquisarCompromisso(void);
 void atualizarCompromisso(void);
 void excluirCompromisso(void);
+
+
+
+
+
 
 int main(void) {
 		char opcao;
@@ -145,9 +149,12 @@ void telaCadastrarTarefa(void) {
 	char tipo[51];
 	char desc[200];
 	char rps[51];
-	char venc[11];
+	int day;
+	int month;
+	int year;
 	char prior[6];
 	char infc[200];
+	int valiDate;
 
     system("cls");
 	printf("\n");
@@ -176,7 +183,22 @@ void telaCadastrarTarefa(void) {
 	scanf("%[A-ZÁÉÍÓÚÂÊÔÇÀÃÕ a-záéíóúâêôçàãõ]", rps);
 	getchar();
 	printf("///           Vencimento:                                                 ///\n");
-	scanf("%[0-9/]", venc);
+	do {
+		printf("Dia: ");
+		scanf("%d", &day);
+		printf("Mês: ");
+		scanf("%d", &month);
+		printf("Ano: ");
+		scanf("%d", &year);
+		valiDate = testDate(day, month, year);
+		if (!valiDate) {
+		printf("A data não é válida\n");
+		printf("Digite a data novamente!!!\n\n");
+		}
+	} while (!valiDate);
+	printf("Data válida\n");
+
+     
 	getchar();
 	printf("///           Prioridade:                                                 ///\n");
 	scanf("%[A-ZÉ a-zé]", prior);
