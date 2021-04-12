@@ -1,7 +1,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "pessoa.h"
+#include "funcionario.h"
 #include "tarefa.h"
 
 
@@ -19,7 +19,7 @@ int main(void) {
 			switch(opcao) {
 				case '1': moduloTarefa();
 								 break;
-				case '2': moduloCompromisso();
+				case '2': moduloFuncionario();
 								 break;
 				case '3': menuSobre();
 								 break;
@@ -52,7 +52,7 @@ char menuPrincipal(void) {
 	printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
 	printf("///                                                                       ///\n");
 	printf("///           1. Modulo tarefa                                            ///\n");
-	printf("///           2. Modulo compromisso                                       ///\n");
+	printf("///           2. Modulo funcionario                                       ///\n");
 	printf("///           4. Informacoes sobre o sistema                              ///\n");
 	printf("///           0. Encerra o programa                                       ///\n");
 	printf("///                                                                       ///\n");

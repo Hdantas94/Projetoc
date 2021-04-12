@@ -63,7 +63,6 @@ void cadastrarTarefa(void) {
 	char rps[51];
 	char prior[6];
 	char infc[200];
-	int valiDate;
 
     system("cls");
 	printf("\n");

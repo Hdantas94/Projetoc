@@ -1,25 +1,26 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "pessoa.h"
+#include "funcionario.h"
 
-void moduloPessoa(void) {
+
+void moduloFuncionario(void) {
 	char opcao;
 	do {
-		opcao = menuPessoa();
+		opcao = menuFuncionario();
 		switch(opcao) {
-			case '1': 	cadastrarPessoa();
+			case '1': 	cadastrarFuncionario();
 						break;
-			case '2': 	pesquisarPessoa();
+			case '2': 	pesquisarFuncionario();
 						break;
-			case '3': 	atualizarPessoa();
+			case '3': 	atualizarFuncionario();
 						break;
-			case '4': 	excluirPessoa();
+			case '4': 	excluirFuncionario();
 						break;
 		} 		
 	} while (opcao != '0');
 }
 
-char menuPessoa(void) {
+char menuFuncionario(void) {
 	char op;
     system("cls");
 	printf("\n");
@@ -38,10 +39,10 @@ char menuPessoa(void) {
 	printf("///           = = = = = = =  Menu compromisso   = = = = = = =             ///\n");
 	printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
 	printf("///                                                                       ///\n");
-	printf("///           1. Cadastrar um novo usuario                                ///\n");
-	printf("///           2. Pesquisar por usuario cadastrado                         ///\n");
-	printf("///           3. Atualizar dados de um usuario                            ///\n");
-	printf("///           4. Excluir um usuario do sistema                            ///\n");
+	printf("///           1. Cadastrar um novo funcionario                            ///\n");
+	printf("///           2. Pesquisar por funcionario cadastrado                     ///\n");
+	printf("///           3. Atualizar dados de um funcionario                        ///\n");
+	printf("///           4. Excluir um funcionario do sistema                        ///\n");
 	printf("///           0. Voltar ao menu anterior                                  ///\n");
 	printf("///                                                                       ///\n");
 	printf("///           Escolha a opcao desejada:                                   ///\n");
@@ -58,12 +59,11 @@ char menuPessoa(void) {
 
 
 
-void cadastrarPessoa(void) {
-	char tipo[51];
-	char desc[200];
-	char local[100];
-	char horar[5];
-	char infc[200];
+void cadastrarFuncionario(void) {
+	char nome[51];
+	char cpf[200];
+	char mail[100];
+	char dataNascimento[8];
 
     system("cls");
 	printf("\n");
@@ -82,20 +82,17 @@ void cadastrarPessoa(void) {
 	printf("///           = = = = = =  Cadastrar Compromisso  = = = = = =             ///\n");
 	printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
 	printf("///                                                                       ///\n");
-	printf("///           Tipo:                                                       ///\n");
-	scanf("%[A-ZÁÉÍÓÚÂÊÔÇÀÃÕ a-záéíóúâêôçàãõ ]", tipo);
+	printf("///           Nome:                                                       ///\n");
+	scanf("%[A-ZÁÉÍÓÚÂÊÔÇÀÃÕ a-záéíóúâêôçàãõ ]", nome);
 	getchar();
-	printf("///           Descricao:                                                  ///\n");
-	scanf("%[A-ZÁÉÍÓÚÂÊÔÇÀÃÕ a-záéíóúâêôçàãõ ]", desc);
+	printf("///           CPF:                                                        ///\n");
+	scanf("%[A-ZÁÉÍÓÚÂÊÔÇÀÃÕ a-záéíóúâêôçàãõ ]", cpf);
 	getchar();
-	printf("///           Local:                                                      ///\n");
-	scanf("%[A-ZÁÉÍÓÚÂÊÔÇÀÃÕ a-záéíóúâêôçàãõ]", local);
+	printf("///           E-mail:                                                     ///\n");
+	scanf("%[A-ZÁÉÍÓÚÂÊÔÇÀÃÕ a-záéíóúâêôçàãõ]", mail);
 	getchar();
-	printf("///           Horario:                                                    ///\n");
-	scanf("%[0-9:]", horar);
-	getchar();
-    printf("///           Informacoes complementares:                                 ///\n");
-	scanf("%[A-ZÁÉÍÓÚÂÊÔÇÀÃÕ a-záéíóúâêôçàãõ ]", infc);
+	printf("///           Data de Nascimento:                                         ///\n");
+	scanf("%[0-9:]", dataNascimento);
 	getchar();
 	printf("///                                                                       ///\n");
 	printf("///                                                                       ///\n");
@@ -105,14 +102,42 @@ void cadastrarPessoa(void) {
 	getchar();
 }
 
-void pesquisarPessoa(void) {
+void pesquisarFuncionario(void) {
+	char cpf[15];
+	
+	system("cls");
+	printf("\n");
+	printf("/////////////////////////////////////////////////////////////////////////////\n");
+	printf("///                                                                       ///\n");
+	printf("///          ===================================================          ///\n");
+	printf("///          = = = = = = = = = = = = = = = = = = = = = = = = = =          ///\n");
+	printf("///          = = = =  Agenda de Tarefas e Compromissos   = = = =          ///\n");
+	printf("///          = = = = = = = = = = = = = = = = = = = = = = = = = =          ///\n");
+	printf("///          ===================================================          ///\n");
+	printf("///                Developed by  @Hdantas94 - Jan, 2021                   ///\n");
+	printf("///                                                                       ///\n");
+	printf("/////////////////////////////////////////////////////////////////////////////\n");
+	printf("///                                                                       ///\n");
+	printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
+	printf("///           = = = = = =    Pesquisar usuario    = = = = = =             ///\n");
+	printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
+	printf("///                                                                       ///\n");
+	printf("///           Informe o CPF do usuario que deseja pesquisar:              ///\n");
+	scanf("%[ ]", cpf);
+	getchar();
+	printf("///                                                                       ///\n");
+	printf("///                                                                       ///\n");
+	printf("/////////////////////////////////////////////////////////////////////////////\n");
+	printf("\n");
+	printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
+	getchar();
+}
+
+
+void atualizarFuncionario(void) {
 
 }
 
-void atualizarPessoa(void) {
-
-}
-
-void excluirPessoa(void) {
+void excluirFuncionario(void) {
 
 }
