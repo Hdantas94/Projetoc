@@ -1,25 +1,25 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "compromisso.h"
+#include "pessoa.h"
 
-void moduloCompromisso(void) {
+void moduloPessoa(void) {
 	char opcao;
 	do {
-		opcao = menuCompromisso();
+		opcao = menuPessoa();
 		switch(opcao) {
-			case '1': 	cadastrarCompromisso();
+			case '1': 	cadastrarPessoa();
 						break;
-			case '2': 	pesquisarCompromisso();
+			case '2': 	pesquisarPessoa();
 						break;
-			case '3': 	atualizarCompromisso();
+			case '3': 	atualizarPessoa();
 						break;
-			case '4': 	excluirCompromisso();
+			case '4': 	excluirPessoa();
 						break;
 		} 		
 	} while (opcao != '0');
 }
 
-char menuCompromisso(void) {
+char menuPessoa(void) {
 	char op;
     system("cls");
 	printf("\n");
@@ -38,10 +38,10 @@ char menuCompromisso(void) {
 	printf("///           = = = = = = =  Menu compromisso   = = = = = = =             ///\n");
 	printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
 	printf("///                                                                       ///\n");
-	printf("///           1. Cadastrar um novo compromisso                            ///\n");
-	printf("///           2. Pesquisar por compromisso ja cadastrado                  ///\n");
-	printf("///           3. Atualizar dados de um compromisso                        ///\n");
-	printf("///           4. Excluir um um compromisso do sistema                     ///\n");
+	printf("///           1. Cadastrar um novo usuario                                ///\n");
+	printf("///           2. Pesquisar por usuario cadastrado                         ///\n");
+	printf("///           3. Atualizar dados de um usuario                            ///\n");
+	printf("///           4. Excluir um usuario do sistema                            ///\n");
 	printf("///           0. Voltar ao menu anterior                                  ///\n");
 	printf("///                                                                       ///\n");
 	printf("///           Escolha a opcao desejada:                                   ///\n");
@@ -58,7 +58,7 @@ char menuCompromisso(void) {
 
 
 
-void cadastrarCompromisso(void) {
+void cadastrarPessoa(void) {
 	char tipo[51];
 	char desc[200];
 	char local[100];
@@ -105,14 +105,14 @@ void cadastrarCompromisso(void) {
 	getchar();
 }
 
-void pesquisarCompromisso(void) {
+void pesquisarPessoa(void) {
 
 }
 
-void atualizarCompromisso(void) {
+void atualizarPessoa(void) {
 
 }
 
-void excluirCompromisso(void) {
+void excluirPessoa(void) {
 
 }

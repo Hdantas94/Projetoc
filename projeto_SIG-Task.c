@@ -1,7 +1,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "compromisso.h"
+#include "pessoa.h"
 #include "tarefa.h"
 
 
@@ -95,5 +95,7 @@ void menuSobre(void) {
     getchar();
 }
 
+void moduloInformacoes(void) {
 
+}
 

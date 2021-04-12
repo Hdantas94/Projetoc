@@ -61,9 +61,6 @@ void cadastrarTarefa(void) {
 	char tipo[51];
 	char desc[200];
 	char rps[51];
-	int day;
-	int month;
-	int year;
 	char prior[6];
 	char infc[200];
 	int valiDate;
