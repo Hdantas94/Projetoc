@@ -58,11 +58,7 @@ char menuTarefa(void) {
 }
 
 void cadastrarTarefa(void) {
-	char tipo[51];
-	char desc[200];
-	char rps[51];
-	char prior[6];
-	char infc[200];
+	Tarefa *trf;
 
     system("cls");
 	printf("\n");
@@ -81,22 +77,24 @@ void cadastrarTarefa(void) {
 	printf("///           = = = = = = = = Cadastrar Tarefa  = = = = = = =             ///\n");
 	printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
 	printf("///                                                                       ///\n");
+	trf = (Tarefa*) malloc(sizeof(Tarefa));
 	printf("///           Tipo:                                                       ///\n");
-	scanf("%[A-ZÁÉÍÓÚÂÊÔÇÀÃÕ a-záéíóúâêôçàãõ ]", tipo);
+	scanf("%[^\n]", trf->tipo);
 	getchar();
 	printf("///           Descricao:                                                  ///\n");
-	scanf("%[A-ZÁÉÍÓÚÂÊÔÇÀÃÕ a-záéíóúâêôçàãõ ]", desc); 
+	scanf("%[^\n]", trf->desc);
 	getchar();
 	printf("///           Responsavel:                                                ///\n");
-	scanf("%[A-ZÁÉÍÓÚÂÊÔÇÀÃÕ a-záéíóúâêôçàãõ]", rps);
+	scanf("%[^\n]", trf->codRespons);
 	getchar();
-	printf("///           Vencimento:                                                 ///\n"); 
+	printf("///           Data:                                                       ///\n"); 
+	scanf("%[^\n]", trf->data);
+	getchar();
+	printf("///           Horário:                                                       ///\n"); 
+	scanf("%[^\n]", trf->horario);
 	getchar();
 	printf("///           Prioridade:                                                 ///\n");
-	scanf("%[A-ZÉ a-zé]", prior);
-	getchar();
-    printf("///           Informacoes complementares:                                 ///\n");
-	scanf("%[A-ZÁÉÍÓÚÂÊÔÇÀÃÕ a-záéíóúâêôçàãõ]", infc);
+	scanf("%[^\n]", trf->prioridade);
 	getchar();
 	printf("///                                                                       ///\n");
 	printf("///                                                                       ///\n");

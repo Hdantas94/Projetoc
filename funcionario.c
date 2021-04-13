@@ -60,10 +60,8 @@ char menuFuncionario(void) {
 
 
 void cadastrarFuncionario(void) {
-	char nome[51];
-	char cpf[200];
-	char mail[100];
-	char dataNascimento[8];
+	Funcionario *func;
+
 
     system("cls");
 	printf("\n");
@@ -82,24 +80,25 @@ void cadastrarFuncionario(void) {
 	printf("///           = = = = = =  Cadastrar Compromisso  = = = = = =             ///\n");
 	printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
 	printf("///                                                                       ///\n");
+	func = (Funcionario*) malloc(sizeof(Funcionario));
 	printf("///           Nome:                                                       ///\n");
-	scanf("%[A-ZÁÉÍÓÚÂÊÔÇÀÃÕ a-záéíóúâêôçàãõ ]", nome);
+	scanf("%[^\n]", func->nome);
 	getchar();
 	printf("///           CPF:                                                        ///\n");
-	scanf("%[A-ZÁÉÍÓÚÂÊÔÇÀÃÕ a-záéíóúâêôçàãõ ]", cpf);
+	scanf("%[^\n]", func->cpf);
 	getchar();
 	printf("///           E-mail:                                                     ///\n");
-	scanf("%[A-ZÁÉÍÓÚÂÊÔÇÀÃÕ a-záéíóúâêôçàãõ]", mail);
+	scanf("%[^\n]", func->email);
 	getchar();
 	printf("///           Data de Nascimento:                                         ///\n");
-	scanf("%[0-9:]", dataNascimento);
+	scanf("%[^\n]", func->dataNasc);
 	getchar();
 	printf("///                                                                       ///\n");
 	printf("///                                                                       ///\n");
 	printf("/////////////////////////////////////////////////////////////////////////////\n");
 	printf("\n");
-	printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
 	getchar();
+	return func;
 }
 
 void pesquisarFuncionario(void) {
