@@ -98,7 +98,7 @@ void cadastrarFuncionario(void) {
 	printf("/////////////////////////////////////////////////////////////////////////////\n");
 	printf("\n");
 	getchar();
-	return func;
+	
 }
 
 void pesquisarFuncionario(void) {

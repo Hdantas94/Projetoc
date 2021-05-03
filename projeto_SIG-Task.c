@@ -1,5 +1,6 @@
-
+#include <stdlib.h>
 #include <stdio.h>
+#include <time.h>
 #include <stdlib.h>
 #include "funcionario.h"
 #include "tarefa.h"
@@ -8,7 +9,9 @@
 
 char menuPrincipal(void);
 void moduloInformacoes(void);
+void moduloRelatorio(void);
 void menuSobre(void);
+
 
 
 
@@ -53,7 +56,8 @@ char menuPrincipal(void) {
 	printf("///                                                                       ///\n");
 	printf("///           1. Modulo tarefa                                            ///\n");
 	printf("///           2. Modulo funcionario                                       ///\n");
-	printf("///           4. Informacoes sobre o sistema                              ///\n");
+	printf("///           3. Modulo relatorio                                         ///\n");
+	printf("///           3. Informacoes sobre o sistema                              ///\n");
 	printf("///           0. Encerra o programa                                       ///\n");
 	printf("///                                                                       ///\n");
 	printf("///           Escolha a opcao desejada:                                   ///\n");
