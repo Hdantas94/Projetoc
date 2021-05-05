@@ -213,7 +213,7 @@ char* telaPesquisarFuncionario(void) {
 	printf("///           = = = = = =  Pesquisar funcionario  = = = = = =             ///\n");
 	printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
 	printf("///                                                                       ///\n");
-	printf("///           Informe o CPF do usuario que deseja pesquisar:              ///\n");
+	printf("///           Informe o CPF do funcionario que deseja pesquisar:          ///\n");
 	scanf("%[^\n]", cpf);
 	getchar();
 	printf("///                                                                       ///\n");
@@ -291,7 +291,7 @@ char* telaExcluirFuncionario(void) {
 
 }
 
-void gravarAluno(Funcionario* func) {
+void gravarFuncionario(Funcionario* func) {
 	FILE* fp;
 
 	fp = fopen("funcionario.dat", "ab");
@@ -337,7 +337,7 @@ void exibirFuncionario(Funcionario* func) {
 	getchar();
 }
 
-void regravarAluno(Funcionario* func) {
+void regravarFuncionario(Funcionario* func) {
 	int achou;
 	FILE* fp;
 	Funcionario *funcLido;
