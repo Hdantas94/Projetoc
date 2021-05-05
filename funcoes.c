@@ -3,13 +3,6 @@
 #include <string.h>
 
 
-// função limpar a tela
-//função adaptado de @flgorgonio
-void limpaTela(void) {
-  if (system("clear") || system("cls")) {
-    
-  }
-}
 
 //função que verifica se é digito
 //função adaptado de @flgorgonio
@@ -52,7 +45,7 @@ int isData(int dd, int mm, int aa) {
   if (aa < 0 || mm < 1 || mm > 12)
     return 0;
   if (mm == 2) {
-    if (textaBissexto(aa)) 
+    if (isBissexto(aa)) 
       maiorDia = 29;
     else
       maiorDia = 28;
@@ -77,11 +70,6 @@ int validaNome(char* nome) {
 	return 1;
 }
 
-//função que valida se foi um e-mail digitado
-int validaEmail(char* email) {
-  // Ainda não implementada
-	return 1;
-}
 
 //função que valida se a data ta no formato dia, mês e ano
 //função adaptado de @flgorgonio
@@ -109,7 +97,7 @@ int validaData(char* data) {
 
 //função que válida cpf
 //função adaptado de @flgorgonio
-int validaCPF(char cpfLido[]) {
+int validaCpf(char cpfLido[]) {
   int tam, soma, d1, d2;
   int cpfInt[11];
 

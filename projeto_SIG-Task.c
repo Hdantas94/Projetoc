@@ -21,11 +21,13 @@ int main(void) {
 			opcao = menuPrincipal();
 			switch(opcao) {
 				case '1': moduloTarefa();
-								 break;
+								break;
 				case '2': moduloFuncionario();
-								 break;
-				case '3': menuSobre();
-								 break;
+								break;
+				case '3': moduloRelatorio();
+								break;
+				case '4': menuSobre();
+								break;
 			}
 
 		} while (opcao != '0');
