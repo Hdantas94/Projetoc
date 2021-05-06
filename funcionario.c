@@ -109,7 +109,7 @@ char menuFuncionario(void) {
 	printf("///                                                                       ///\n");
 	printf("/////////////////////////////////////////////////////////////////////////////\n");
 	printf("\n");
-    ///printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
+    ////printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
 	getchar();
 	return op;
 }
@@ -136,7 +136,7 @@ void telaErroArquivo(void) {
 	printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
 	printf("///                                                                       ///\n");
 	printf("/////////////////////////////////////////////////////////////////////////////\n");
-	///printf("\n\nTecle ENTER para continuar!\n\n");
+	////printf("\n\nTecle ENTER para continuar!\n\n");
 	getchar();
 	exit(1);
 }
@@ -170,11 +170,11 @@ Funcionario* telaCadastrarFuncionario(void) {
 	scanf("%[^\n]", func->nome);
 	getchar();
 	} while(!validaNome(func->nome));
-	///do {
+	////do {
 	printf("///           CPF: ");
 	scanf("%[^\n]", func->cpf);
 	getchar();
-	///} while(!validaCpf(func->cpf));
+	////} while(!validaCpf(func->cpf));
 	printf("///           E-mail: ");
 	scanf("%[^\n]", func->email);
 	getchar();
@@ -220,7 +220,7 @@ char* telaPesquisarFuncionario(void) {
 	printf("///                                                                       ///\n");
 	printf("/////////////////////////////////////////////////////////////////////////////\n");
 	printf("\n");
-	///printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
+	////printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
 	return cpf;
 }
 
@@ -253,7 +253,7 @@ char* telaAtualizarFuncionario(void) {
 	printf("///                                                                       ///\n");
 	printf("/////////////////////////////////////////////////////////////////////////////\n");
 	printf("\n");
-	///printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
+	////printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
 	return cpf;
 
 }
@@ -286,7 +286,7 @@ char* telaExcluirFuncionario(void) {
 	printf("///                                                                       ///\n");
 	printf("/////////////////////////////////////////////////////////////////////////////\n");
 	printf("\n");
-	///printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
+	////printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
 	return cpf;
 
 }
@@ -331,7 +331,7 @@ void exibirFuncionario(Funcionario* func) {
 		printf("Nome: %s\n", func->nome);
 		printf("E-mail: %s\n", func->email);
 		printf("Data de Nascimento: %s\n", func->dataNasc);
-		///printf("Status: %d\n", func->status);
+		////printf("Status: %d\n", func->status);
 	}
 	printf("\n\nTecle ENTER para continuar!\n\n");
 	getchar();
