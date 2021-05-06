@@ -4,6 +4,8 @@
 #include "tarefa.h"
 #include "funcoes.h"
 
+typedef struct tarefa Tarefa;
+
 
 void moduloTarefa(void) {
 	char opcao;
@@ -164,7 +166,7 @@ Tarefa* telaCadastrarTarefa(void) {
 	scanf("%[^\n]", trf->tipo);
 	getchar();
 	} while (!validaNome(trf->tipo));
-	printf("///          CPF do Responsavel: ");
+	printf("///           CPF do Responsavel: ");
 	scanf("%[^\n]", trf->codRespons);
 	getchar();
 	do {
@@ -185,7 +187,6 @@ Tarefa* telaCadastrarTarefa(void) {
 	printf("///                                                                       ///\n");
 	printf("/////////////////////////////////////////////////////////////////////////////\n");
 	printf("\n");
-	getchar();
 	return trf;
 }
 
