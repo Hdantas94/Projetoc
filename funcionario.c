@@ -136,7 +136,6 @@ void telaErroArquivo(void) {
 	printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
 	printf("///                                                                       ///\n");
 	printf("/////////////////////////////////////////////////////////////////////////////\n");
-	////printf("\n\nTecle ENTER para continuar!\n\n");
 	getchar();
 	exit(1);
 }

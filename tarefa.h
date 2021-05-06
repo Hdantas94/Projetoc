@@ -2,11 +2,11 @@
 typedef struct tarefa Tarefa;
 
 struct tarefa {
-  char tipo;
+  char tipo[20];
   char codRespons[12];
-  char data[9];
+  char data[11];
   char horario[12];
-  char prioridade;
+  char prioridade[6];
   int status;
 };
 
@@ -20,7 +20,7 @@ Tarefa* telaCadastrarTarefa(void);
 char* telaPesquisarTarefa(void);
 char* telaAtualizarTarefa(void);
 char* telaExcluirTarefa(void);
-void telaErroArquivo(void);
+void telaErroArquivoTarefa(void);
 
 void cadastrarTarefa(void);
 void pesquisarTarefa(void);

@@ -8,5 +8,4 @@ int isData(int, int, int);
 
 int validaNome(char*);
 int validaData(char*);
-int validaFone(char*);
 int validaCpf(char*);

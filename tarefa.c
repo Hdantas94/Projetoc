@@ -112,7 +112,7 @@ char menuTarefa(void) {
 	return op;
 }
 
-void telaErroArquivo(void) {
+void telaErroArquivoTarefa(void) {
 	system("cls");
 	printf("\n");
 	printf("/////////////////////////////////////////////////////////////////////////////\n");
@@ -138,7 +138,7 @@ void telaErroArquivo(void) {
 	exit(1);
 }
 
-Tarefa* telacadastrarTarefa(void) {
+Tarefa* telaCadastrarTarefa(void) {
 	Tarefa *trf;
 	trf = (Tarefa*) malloc(sizeof(Tarefa));
 
@@ -159,21 +159,28 @@ Tarefa* telacadastrarTarefa(void) {
 	printf("///           = = = = = = = = Cadastrar Tarefa  = = = = = = =             ///\n");
 	printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
 	printf("///                                                                       ///\n");
+	do {
 	printf("///           Tipo: ");
 	scanf("%[^\n]", trf->tipo);
 	getchar();
+	} while (!validaNome(trf->tipo));
 	printf("///          CPF do Responsavel: ");
 	scanf("%[^\n]", trf->codRespons);
 	getchar();
-	printf("///           Data: "); 
+	do {
+	printf("///           Data(dia/mes/ano): "); 
 	scanf("%[^\n]", trf->data);
 	getchar();
-	printf("///           Horário: "); 
+	} while(!validaData(trf->data));
+	printf("///           Horario: "); 
 	scanf("%[^\n]", trf->horario);
 	getchar();
-	printf("///           Prioridade: ");
+	do {
+	printf("///           Prioridade(baixa,media ou alta): ");
 	scanf("%[^\n]", trf->prioridade);
 	getchar();
+	} while(!validaNome(trf->prioridade));
+	trf->status = True;
 	printf("///                                                                       ///\n");
 	printf("///                                                                       ///\n");
 	printf("/////////////////////////////////////////////////////////////////////////////\n");
@@ -282,7 +289,7 @@ void gravarTarefa(Tarefa* trf) {
 
 	fp = fopen("tarefa.dat", "ab");
 	if (fp == NULL) {
-		telaErroArquivo();
+		telaErroArquivoTarefa();
 	}
 	fwrite(trf, sizeof(Tarefa), 1, fp);
 	fclose(fp);
@@ -295,7 +302,7 @@ Tarefa* buscarTarefa(char* codRespons) {
 	trf = (Tarefa*) malloc(sizeof(Tarefa));
 	fp = fopen("tarefa.dat", "rb");
 	if (fp == NULL) {
-		telaErroArquivo();
+		telaErroArquivoTarefa();
 	}
 	while(fread(trf, sizeof(Tarefa), 1, fp)) {
 		if ((strcmp(trf->codRespons, codRespons) == 0) && (trf->status == True)) {
@@ -315,9 +322,9 @@ void exibirTarefa(Tarefa* trf) {
 		printf("\n= = = Tarefa Cadastrada = = =\n");
 		printf("CPF Responsavel: %s\n", trf->codRespons);
 		printf("Data: %s\n", trf->data);
-		printf("Tipo: %d\n", trf->tipo);
+		printf("Tipo: %s\n", trf->tipo);
 		printf("Horario: %s\n", trf->horario);
-		printf("Prioridade: %d\n", trf->prioridade);
+		printf("Prioridade: %s\n", trf->prioridade);
 	}
 	getchar();
 }
@@ -330,7 +337,7 @@ void regravarTarefa(Tarefa* trf) {
 	trfLido = (Tarefa*) malloc(sizeof(Tarefa));
 	fp = fopen("tarefa.dat", "r+b");
 	if (fp == NULL) {
-		telaErroArquivo();
+		telaErroArquivoTarefa();
 	}
 	achou = False;
 	while(fread(trfLido, sizeof(Tarefa), 1, fp) && !achou) {
