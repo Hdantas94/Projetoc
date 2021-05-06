@@ -52,10 +52,10 @@ void atualizarFuncionario(void) {
 	if (func == NULL) {
     	printf("\n\nFuncionario não encontrado!\n\n");
   	} else {
-		  func = telaCadastrarFuncionario();
-		  strcpy(func->cpf, cpf);
-		  regravarFuncionario(func);
-		  free(func);
+		func = telaCadastrarFuncionario();
+		strcpy(func->cpf, cpf);
+		regravarFuncionario(func);
+		free(func);
 	}
 	free(cpf);
 }
@@ -109,7 +109,7 @@ char menuFuncionario(void) {
 	printf("///                                                                       ///\n");
 	printf("/////////////////////////////////////////////////////////////////////////////\n");
 	printf("\n");
-    printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
+    ///printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
 	getchar();
 	return op;
 }
@@ -136,7 +136,7 @@ void telaErroArquivo(void) {
 	printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
 	printf("///                                                                       ///\n");
 	printf("/////////////////////////////////////////////////////////////////////////////\n");
-	printf("\n\nTecle ENTER para continuar!\n\n");
+	///printf("\n\nTecle ENTER para continuar!\n\n");
 	getchar();
 	exit(1);
 }
@@ -166,20 +166,20 @@ Funcionario* telaCadastrarFuncionario(void) {
 	printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
 	printf("///                                                                       ///\n");
 	do {
-	printf("///           Nome:                                                       ///\n");
+	printf("///           Nome: ");
 	scanf("%[^\n]", func->nome);
 	getchar();
 	} while(!validaNome(func->nome));
-	do {
-	printf("///           CPF:                                                        ///\n");
+	///do {
+	printf("///           CPF: ");
 	scanf("%[^\n]", func->cpf);
 	getchar();
-	} while(!validaCpf(func->cpf));
-	printf("///           E-mail:                                                     ///\n");
+	///} while(!validaCpf(func->cpf));
+	printf("///           E-mail: ");
 	scanf("%[^\n]", func->email);
 	getchar();
 	do {
-	printf("///           Data de Nascimento:                                         ///\n");
+	printf("///           Data de Nascimento: ");
 	scanf("%[^\n]", func->dataNasc);
 	getchar();
 	} while(!validaData(func->dataNasc));
@@ -213,14 +213,14 @@ char* telaPesquisarFuncionario(void) {
 	printf("///           = = = = = =  Pesquisar funcionario  = = = = = =             ///\n");
 	printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
 	printf("///                                                                       ///\n");
-	printf("///           Informe o CPF do funcionario que deseja pesquisar:          ///\n");
+	printf("/// Informe o CPF do funcionario que deseja pesquisar: ");
 	scanf("%[^\n]", cpf);
 	getchar();
 	printf("///                                                                       ///\n");
 	printf("///                                                                       ///\n");
 	printf("/////////////////////////////////////////////////////////////////////////////\n");
 	printf("\n");
-	printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
+	///printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
 	return cpf;
 }
 
@@ -246,14 +246,14 @@ char* telaAtualizarFuncionario(void) {
 	printf("///           = = = = = =  Atualizar funcionario  = = = = = =             ///\n");
 	printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
 	printf("///                                                                       ///\n");
-	printf("///       Informe o CPF do funcionario que deseja atualizar os dados:     ///\n");
+	printf("/// Informe o CPF do funcionario que deseja atualizar os dados: ");
 	scanf("%[^\n]", cpf);
 	getchar();
 	printf("///                                                                       ///\n");
 	printf("///                                                                       ///\n");
 	printf("/////////////////////////////////////////////////////////////////////////////\n");
 	printf("\n");
-	printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
+	///printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
 	return cpf;
 
 }
@@ -279,14 +279,14 @@ char* telaExcluirFuncionario(void) {
 	printf("///           = = = = = =   Excluir funcionario   = = = = = =             ///\n");
 	printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
 	printf("///                                                                       ///\n");
-	printf("///           Informe o CPF do funcionario que deseja excluir:            ///\n");
+	printf("/// Informe o CPF do funcionario que deseja excluir: ");
 	scanf("%[^\n]", cpf);
 	getchar();
 	printf("///                                                                       ///\n");
 	printf("///                                                                       ///\n");
 	printf("/////////////////////////////////////////////////////////////////////////////\n");
 	printf("\n");
-	printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
+	///printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
 	return cpf;
 
 }
@@ -331,7 +331,7 @@ void exibirFuncionario(Funcionario* func) {
 		printf("Nome: %s\n", func->nome);
 		printf("E-mail: %s\n", func->email);
 		printf("Data de Nascimento: %s\n", func->dataNasc);
-		printf("Status: %d\n", func->status);
+		///printf("Status: %d\n", func->status);
 	}
 	printf("\n\nTecle ENTER para continuar!\n\n");
 	getchar();
@@ -353,7 +353,6 @@ void regravarFuncionario(Funcionario* func) {
 			achou = True;
 			fseek(fp, -1*sizeof(Funcionario), SEEK_CUR);
         	fwrite(func, sizeof(Funcionario), 1, fp);
-			//break;
 		}
 	}
 	fclose(fp);
