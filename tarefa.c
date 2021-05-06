@@ -168,7 +168,7 @@ Tarefa* telaCadastrarTarefa(void) {
 	scanf("%[^\n]", trf->codRespons);
 	getchar();
 	do {
-	printf("///           Data(dia/mes/ano): "); 
+	printf("///           Data(dia, mes, ano): "); 
 	scanf("%[^\n]", trf->data);
 	getchar();
 	} while(!validaData(trf->data));
