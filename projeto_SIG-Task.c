@@ -24,8 +24,8 @@ int main(void) {
 								break;
 				case '2': moduloFuncionario();
 								break;
-				case '3': moduloRelatorio();
-								break;
+				//case '3': moduloRelatorio();
+				//				break;
 				case '4': menuSobre();
 								break;
 			}
@@ -59,10 +59,10 @@ char menuPrincipal(void) {
 	printf("///           1. Modulo tarefa                                            ///\n");
 	printf("///           2. Modulo funcionario                                       ///\n");
 	printf("///           3. Modulo relatorio                                         ///\n");
-	printf("///           3. Informacoes sobre o sistema                              ///\n");
+	printf("///           4. Informacoes sobre o sistema                              ///\n");
 	printf("///           0. Encerra o programa                                       ///\n");
 	printf("///                                                                       ///\n");
-	printf("///           Escolha a opcao desejada:                                   ///\n");
+	printf("///           Escolha a opcao desejada: ");
 	scanf("%c", &op);
 	printf("///                                                                       ///\n");
 	printf("///                                                                       ///\n");
