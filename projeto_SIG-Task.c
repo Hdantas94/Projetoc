@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include "funcionario.h"
 #include "tarefa.h"
+#include "relatorio.h"
 
 
 

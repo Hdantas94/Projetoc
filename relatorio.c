@@ -25,7 +25,7 @@ void funcionarioCadastrado(void) {
 	char* cpfFunc;
 
 	telaFuncionarioCadastrado(cpfFunc);
-	
+	free(cpfFunc);
 }
 
 char menuRelatorio(void) {
@@ -38,7 +38,7 @@ char menuRelatorio(void) {
 	printf("///          = = = = = = = = = = = = = = = = = = = = = = = = = =          ///\n");
 	printf("///          = = = = = = = = = = = = = = = = = = = = = = = = = =          ///\n");
 	printf("///          ===================================================          ///\n");
-	printf("///                Developed by  @Hdantas94 -     , 2021                  ///\n");
+	printf("///                Developed by  @Hdantas94 -       2021                  ///\n");
 	printf("///                                                                       ///\n");
 	printf("/////////////////////////////////////////////////////////////////////////////\n");
 	printf("///                                                                       ///\n");
