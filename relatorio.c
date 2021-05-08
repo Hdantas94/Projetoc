@@ -23,9 +23,9 @@ void moduloRelatorio(void) {
 
 void funcionarioCadastrado(void) {
 	char* cpfFunc;
-	cpfFunc = telaFuncionarioCadastrado();
-   listaFuncionarioCadastrado(cpfFunc);
-   free(cpfFunc);
+
+	telaFuncionarioCadastrado(cpfFunc);
+	
 }
 
 char menuRelatorio(void) {
@@ -68,6 +68,7 @@ void telaFuncionarioCadastrado(char* cpfFunc) {
     printf("///           ===============================================             ///\n");
 	listaFuncionarioCadastrado(cpfFunc);
 	printf("\n");
+
 
 
 }
