@@ -164,11 +164,11 @@ Funcionario* telaCadastrarFuncionario(void) {
 	printf("///           = = = = = =  Cadastrar funcionario  = = = = = =             ///\n");
 	printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
 	printf("///                                                                       ///\n");
-	do {
+	//do {
 	printf("///           Nome: ");
 	scanf("%[^\n]", func->nome);
 	getchar();
-	} while(!validaNome(func->nome));
+	//} while(!validaNome(func->nome));
 	////do {
 	printf("///           CPF: ");
 	scanf("%[^\n]", func->cpf);

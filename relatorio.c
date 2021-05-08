@@ -1,123 +1,100 @@
-// #include <stdio.h>
-// #include <stdlib.h>
-// #include <string.h>
-// #include "relatorio.h"
-// #include "funcoes.h"
-// #include "funcionario.h"
-// #include "tarefa.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "relatorio.h"
+#include "funcoes.h"
+#include "funcionario.h"
+#include "tarefa.h"
+
+typedef struct funcionario Funcionario;
 
 
-// void moduloRelatorio(void) {
-// 	char opcao;
-// 	do {
-// 		opcao = menuRelatorio();
-// 		switch(opcao) {
-// 			//case '1': 	relatorioTarefaCadastrada();
-// 			//			break;
-// 			case '2': 	funcionarioCadastrado();
-// 						break;
-// 			//case '3': 	relatorioTarefaPorData();
-// 			//			break;
-// 		} 		
-// 	} while (opcao != '0');
-// }
+void moduloRelatorio(void) {
+	char opcao;
+	do {
+		opcao = menuRelatorio();
+		switch(opcao) {
+			case '1': 	funcionarioCadastrado();
+						break;
+			
+		} 		
+	} while (opcao != '0');
+}
 
-// void funcionarioCadastrado(void) {
-// 	char* cpf;
-// 	cpf = telaFuncionarioCadastrado();
-//    listarelatorioFuncionarioCadastrado(cpf);
-//    free(cpf);
-// }
+void funcionarioCadastrado(void) {
+	char* cpfFunc;
+	cpfFunc = telaFuncionarioCadastrado();
+   listaFuncionarioCadastrado(cpfFunc);
+   free(cpfFunc);
+}
+
+char menuRelatorio(void) {
+	char op;
+    system("cls");
+	printf("\n");
+	printf("/////////////////////////////////////////////////////////////////////////////\n");
+	printf("///                                                                       ///\n");
+	printf("///          ===================================================          ///\n");
+	printf("///          = = = = = = = = = = = = = = = = = = = = = = = = = =          ///\n");
+	printf("///          = = = =   Escola de Idiomas Língua Solta    = = = =          ///\n");
+	printf("///          = = = = = = = = = = = = = = = = = = = = = = = = = =          ///\n");
+	printf("///          ===================================================          ///\n");
+	printf("///                Developed by  @flgorgonio - Jan, 2021                  ///\n");
+	printf("///                                                                       ///\n");
+	printf("/////////////////////////////////////////////////////////////////////////////\n");
+	printf("///                                                                       ///\n");
+	printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
+	printf("///           = = = = = = = =  Menu Relatório = = = = = = = =             ///\n");
+	printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
+	printf("///                                                                       ///\n");
+	printf("///           1. Listar Funcionarios Cadastrados                          ///\n");
+	printf("///           0. Voltar ao menu anterior                                  ///\n");
+	printf("///                                                                       ///\n");
+	printf("///           Escolha a opção desejada: ");
+	scanf("%c", &op);
+	getchar();
+	printf("///                                                                       ///\n");
+	printf("///                                                                       ///\n");
+	printf("/////////////////////////////////////////////////////////////////////////////\n");
+	printf("\n");
+	return op;
+}
+
+void telaFuncionarioCadastrado(char* cpfFunc) {
+
+	system("cls");
+	printf("\n");
+	printf("///           ===============================================             ///\n");
+	printf("///           ||        Funcionarios Cadastrados           ||             ///\n");
+    printf("///           ===============================================             ///\n");
+	listaFuncionarioCadastrado(cpfFunc);
+	printf("\n");
 
 
-// char menuRelatorio(void) {
-// 	char op;
-//    system("cls");
-// 	printf("\n");
-// 	printf("/////////////////////////////////////////////////////////////////////////////\n");
-// 	printf("///                                                                       ///\n");
-// 	printf("///          ===================================================          ///\n");
-// 	printf("///          = = = = = = = = = = = = = = = = = = = = = = = = = =          ///\n");
-// 	printf("///          = = = =   Agenda de Tarefas e Compromissos  = = = =          ///\n");
-// 	printf("///          = = = = = = = = = = = = = = = = = = = = = = = = = =          ///\n");
-// 	printf("///          ===================================================          ///\n");
-// 	printf("///                Developed by  @Hdantas94 - 2021                        ///\n");
-// 	printf("///                                                                       ///\n");
-// 	printf("/////////////////////////////////////////////////////////////////////////////\n");
-// 	printf("///                                                                       ///\n");
-// 	printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
-// 	printf("///           = = = = = = = =  Menu Relatorio = = = = = = = =             ///\n");
-// 	printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
-// 	printf("///                                                                       ///\n");
-// 	printf("///           1. Listar Tarefas Cadastradas                               ///\n");
-// 	printf("///           2. Listar Funcionarios Cadastrados                          ///\n");
-// 	printf("///           3. Listar tarefas por data                                  ///\n");
-// 	printf("///                                                                       ///\n");
-// 	printf("///           0. Voltar ao menu anterior                                  ///\n");
-// 	printf("///                                                                       ///\n");
-// 	printf("///           Escolha a opcao desejada: ");
-// 	scanf("%c", &op);
-// 	getchar();
-// 	printf("///                                                                       ///\n");
-// 	printf("///                                                                       ///\n");
-// 	printf("/////////////////////////////////////////////////////////////////////////////\n");
-// 	printf("\n");
-// 	return op;
-// }
+}
 
-// char* telaFuncionarioCadastrado(void) {
-//    system("cls");
-// 	printf("\n");
-// 	printf("/////////////////////////////////////////////////////////////////////////////\n");
-// 	printf("///                                                                       ///\n");
-// 	printf("///          ===================================================          ///\n");
-// 	printf("///          = = = = = = = = = = = = = = = = = = = = = = = = = =          ///\n");
-// 	printf("///          = = = =   Agenda de Tarefas e Compromissos  = = = =          ///\n");
-// 	printf("///          = = = = = = = = = = = = = = = = = = = = = = = = = =          ///\n");
-// 	printf("///          ===================================================          ///\n");
-// 	printf("///                Developed by  @Hdantas94 - Jan, 2021                  ///\n");
-// 	printf("///                                                                       ///\n");
-// 	printf("/////////////////////////////////////////////////////////////////////////////\n");
-// 	printf("///                                                                       ///\n");
-// 	printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
-// 	printf("///           = = = = = = =    Funcionarios     = = = = = = =             ///\n");
-// 	printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
-// 	printf("///                                                                       ///\n");
-// 	printf("///           ===============================================             ///\n");
-//  	printf("///           ||     CPF        ||         nome            ||             ///\n");
-//  	printf("///           ===============================================             ///\n");
-//      listaRelatorioFuncionarioCadastrado(cpf);
-// 	printf("///                                                                       ///\n");
-// 	printf("///                                                                       ///\n");
-// 	printf("/////////////////////////////////////////////////////////////////////////////\n");
-// 	printf("\n");
-//    printf("///           Tecle <ENTER> para continuar...                             ///");
-//    getchar();
-// }
+void listaFuncionarioCadastrado(char* cpfFunc) {
+    FILE* fp;
+    Funcionario* func;
+    char nomeFunc[50];
+    int tam;
 
-// void listaRelatorioFuncionarioCadastrado(char* cpf) {
-//    FILE* fp;
-//    Funcionario* func;
-//    char nomef[26];
-//    int tam;
-
-//    func = (Funcionario*) malloc(sizeof(Funcionario));
-//    fp = fopen("funcionario.dat", "rb");
-//    while (fread(func, sizeof(Funcionario), 1, fp)) {
-//        if (strcmp(func->cpf, cpf) == 0) {
-//            tam = strlen(func->nome);
-//            strncpy(nomef, func->nome, tam);
-//            for (int i = tam; i < 25; i++) {
-//                nomef[i] = ' ';
-//            }
-//           nomef[25] = '\0';
-//            printf("///           ||     %-20s     || %-12s ||             ///\n", func->nome, cpf);
-//        }
-//    }
-//    fclose(fp);
-//    free(func);
-// }
-
+    func = (Funcionario*) malloc(sizeof(Funcionario));
+    fp = fopen("funcionario.dat", "rb");
+    while (fread(func, sizeof(Funcionario), 1, fp)) {
+        if (strcmp(func->cpf, cpfFunc) == 0) {
+            tam = strlen(func->nome);
+            strncpy(nomeFunc, func->nome, tam);
+            for (int i = tam; i < 49; i++) {
+                nomeFunc[i] = ' ';
+            }
+            nomeFunc[49] = '\0';
+            printf("///           ||     %-12s     || %-49s                      || ///\n", func->cpf, nomeFunc);
+        }
+    }
+    fclose(fp);
+    free(func);
+}
 
 
 
